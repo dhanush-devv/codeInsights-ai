@@ -17,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/review/history', {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/review/history`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         setHistory(res.data);

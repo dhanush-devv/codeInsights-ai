@@ -32,7 +32,7 @@ const CodeReview = () => {
     setResult(null);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/review/analyze', 
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/review/analyze`, 
         { code, language, title: `${language} Analysis` },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );
